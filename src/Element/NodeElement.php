@@ -252,14 +252,14 @@ class NodeElement extends TraversableElement
      *
      * Calling this method on any other elements is not allowed.
      *
-     * @param string $option
-     * @param bool   $multiple whether the option should be added to the selection for multiple selects
+     * @param string|int $option
+     * @param bool       $multiple whether the option should be added to the selection for multiple selects
      *
      * @return void
      *
      * @throws ElementNotFoundException when the option is not found in the select box
      */
-    public function selectOption(string $option, bool $multiple = false)
+    public function selectOption(string|int $option, bool $multiple = false)
     {
         if ('select' !== $this->getTagName()) {
             $this->getDriver()->selectOption($this->getXpath(), $option, $multiple);
